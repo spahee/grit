@@ -148,7 +148,7 @@ ggplot(group_all, aes(x=date,y=TD,group=1))+geom_line(colour="red")+geom_point(c
 
 ##### 1).고용형태별 구인구직 3년 그래프(2013~2015)
 
-###### (1). 일반취업가능률(구인/구직자 비율) = employ(green), 정규직취업가능률(정규직구인/구직자 비율) = re.employ(blue) ==&gt; 정규직 취업가능률 &gt; 일반 취업가능률 ...
+###### (1). 일반취업가능률(구인/구직자 비율) = employ(green), 정규직취업가능률(정규직 구인/정규직 구직자 비율) = re.employ(blue) ==&gt; 정규직 취업가능률 &gt; 일반 취업가능률 ...
 
 ``` r
 ggplot(group_all, aes(x=date,y=employ, group=1))+geom_line(colour="blue")+geom_point(colour="blue")+geom_line(aes(x=date, y=re.employ), colour="green", )+geom_point(aes(x=date,y=re.employ, group=1),colour="green")+ylim(0,1) + xlab('기간') +
@@ -205,7 +205,7 @@ ggplot(w,aes(x=date)) +
   scale_colour_manual("",
                       breaks = c("hw/worker", "lw/worker"),
                       values = c("red", "blue")) +ylim(0,1)+
-  ggtitle("전체대비 150이상희망 구직자와 150미만희망 구직자 비")
+  ggtitle("전체 대비 150이상희망 구직자와 150미만희망 구직자 비")
 ```
 
 ![](team33_files/figure-markdown_github/unnamed-chunk-4-1.png)
@@ -221,7 +221,7 @@ ggplot(w,aes(x=date)) +
   scale_colour_manual("",
                       breaks = c("lw.employ", "hw.employ"),
                       values = c("red", "blue")) +
-  ggtitle("임금이 150미만(blue), 150이상희망의 취업률")
+  ggtitle("각각 임금 월 150미만(blue), 150이상 희망의 취업가능률")
 ```
 
 ![](team33_files/figure-markdown_github/unnamed-chunk-5-1.png)
@@ -272,7 +272,7 @@ ggplot(all, aes(x=date,y=UR,group=1))+geom_line(colour="blue")+geom_point(colour
 
 ![](team33_files/figure-markdown_github/unnamed-chunk-7-1.png)
 
-###### 2. 전체취업률(구인/구직자 비율) = employ(green), 대졸취업률(대졸 구인/대졸구직자 비율) = re.employ(blue)
+###### 2. 전체취업가능률(전체 구인/전체 구직자 비율) = employ(green), 대졸취업가능률(대졸 구인/대졸구직자 비율) = re.employ(blue)
 
 ``` r
 ggplot(all, aes(x=date,y=employ, group=1))+geom_line(colour="blue")+geom_point(colour="blue")+geom_line(aes(x=date, y=u.employ), colour="green", )+geom_point(aes(x=date,y=u.employ, group=1),colour="green")+ylim(0,1) + xlab('기간') +
@@ -284,7 +284,7 @@ ggplot(all, aes(x=date,y=employ, group=1))+geom_line(colour="blue")+geom_point(c
 
 ##### 2.대졸 구인구직 3년 분석 및 해석(2013~2015)
 
-구직자 중에 대졸자가 평균 약 10만명으로 전체 구직자의 25%가량을 차지함에도 대졸 구직희망자의 취업률은 전체 취업률이 50% to 70%에 분포한데 반해 대졸취업률은 3 to 5%에 머문다. 워크넷 노동시장에서 대졸 일자리에 대한 심각한 공급과잉현상이 발생하고 있다.
+구직자 중에 대졸자가 평균 약 10만명으로 전체 구직자의 25%가량을 차지함에도 대졸 구직희망자의 취업률은 전체 취업률이 50% to 70%에 분포한데 반해 3 to 5%에 머문다. 워크넷 노동시장에서 대졸 일자리에 대한 심각한 공급과잉현상이 발생하고 있다.
 
 이는 워크넷 노동시장의 일자리가 대졸이상의 고학력 일자리보단 생산직이나 비숙련일자리임을 의미한다고 해석할 수 있다. 한편 우리나라의 교육인플레 문제가 이러한 노동시장에서 대졸자 과잉공급현상으로 드러났다고 해석할 수 있으며 정상적인 경제 균형 형성이 불가능하다고 볼 수있다.
 
@@ -419,7 +419,7 @@ ggplot(re.all, aes(x=date,y=m.empoly,group=1,))+geom_line(colour="red")+geom_poi
 
 이러한 현상의 배경에는 워크넷 구직시장의 일자리 특성과 함께, 현 우리나라의 교육이 인문일반직에 치중되었기 때문이라고 해석할 수 있다. 관습적으로 블루칼라에 대한 차별이 자연스러운 경제 흐름을 막는 것이다. 또한 현재 인문일반직군을 재교육할 국가적 차원의 시설이 없다고 해석할 수 있다.
 
-한편, 13년 7월의 정책과 비교할 때, 노동시장의 전반적인 과잉공급현상의 원인인 인문일반직의 낮은취업가능률은 노동수요자 중심의 정책을 통해 효과적으로 해소할 수 있다고 볼 수 있다. 구직자 전반에 대한 지원정책보다 직군별 정책입안이 필요한 것이다.
+한편, 13년 7월의 정책과 비교할 때, 노동시장의 전반적인 과잉공급현상의 원인인 인문일반직의 낮은취업가능률은 노동수요자 중심의 정책을 통해 효과적으로 해소할 수 있다고 볼 수 있다. 구직자 전반에 대한 지원정책보다 노동수요자중심의 직군별 정책입안이 필요한 것이다.
 
 #### 5종합 해석
 
